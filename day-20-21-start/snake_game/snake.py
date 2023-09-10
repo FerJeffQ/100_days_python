@@ -1,20 +1,42 @@
 from turtle import Turtle
 MOVE_DISTANCE = 20
+
+
 class Snake:
     def __init__(self):
         self.segments = []
         self.pos_x = 0
+        self.pos_y = 0
+        self.flag_create = True
         self.generate_snake()
         self.head = self.segments[0]
 
     def generate_snake(self):
-        for num in range(3):    
-            segment = Turtle("square")        
-            segment.color("white")
-            segment.penup()
-            segment.goto(self.pos_x,0)    
-            self.segments.append(segment)
+        for _ in range(3):    
+            self.add_segment()    
+        self.flag_create = False
+
+
+    def add_segment(self):
+
+        if self.flag_create == True:
             self.pos_x += -MOVE_DISTANCE
+        else:                      
+            self.pos_x = self.segments[-1].xcor()
+            self.pos_y = self.segments[-1].ycor()        
+            
+        segment = Turtle("square")        
+        segment.color("white")
+        segment.shapesize(stretch_len=0.8,stretch_wid=0.8)
+        segment.penup()
+        segment.goto(self.pos_x,self.pos_y)    
+        self.segments.append(segment)
+
+
+
+            
+
+
 
     def up(self):
         if self.head.heading() != 270.0:
