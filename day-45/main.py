@@ -26,9 +26,9 @@ soup = BeautifulSoup(contents, "html.parser")
 # company_url = soup.select_one(selector="p a")
 # print(company_url)
 
-# like a css
-# name = soup.select_one(selector="#name")
-# print(name) # id=name
+like a css
+name = soup.select_one(selector="#name")
+print(name) # id=name
 
-# headings = soup.select_one(selector=".heading")
-# print(headings)
+headings = soup.select_one(selector=".heading")
+print(headings)
