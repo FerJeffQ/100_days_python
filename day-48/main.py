@@ -21,16 +21,29 @@ driver = webdriver.Chrome(options=chrome_options)
 
 driver.get("https://www.python.org")
 
-search_bar = driver.find_element(By.NAME, value="q")
-#print(search_bar.tag_name)
-print(search_bar.get_attribute("placeholder"))
-button = driver.find_element(By.ID, value="submit")
-print(button.size)
-documentation_link = driver.find_element(By.CSS_SELECTOR, value=".jobs-widget a")
-print(documentation_link.text)
+#Find elements
+# search_bar = driver.find_element(By.NAME, value="q")
+# #print(search_bar.tag_name)
+# print(search_bar.get_attribute("placeholder"))
+# button = driver.find_element(By.ID, value="submit")
+# print(button.size)
+# documentation_link = driver.find_element(By.CSS_SELECTOR, value=".jobs-widget a")
+# print(documentation_link.text)
 
-bug_link = driver.find_element(By.XPATH, value='//*[@id="site-map"]/div[2]/div/ul/li[3]/a')
-print(bug_link.text)
+# bug_link = driver.find_element(By.XPATH, value='//*[@id="site-map"]/div[2]/div/ul/li[3]/a')
+# print(bug_link.text)
+
+# CSS SELECTOR
+event_times = driver.find_elements(By.CSS_SELECTOR, value=".event-widget time")
+event_text = driver.find_elements(By.CSS_SELECTOR, value=".event-widget li a")
+
+events = {}
+for n in range(len(event_times)):
+    events[n] = {
+        "time": event_times[n].text,
+        "name": event_text[n].text
+    }
+print(events)    
 
 #driver.quit()
 
