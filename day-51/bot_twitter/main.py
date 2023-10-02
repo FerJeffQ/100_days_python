@@ -9,7 +9,7 @@ USERNAME = ""
 PASSWORD = ""
 
 X_URL = "https://twitter.com/"
-URL = "https://www.speedtest.net/"
+URL = "https://fast.com/"
 
 
 class Bot_Twitter:
@@ -48,8 +48,8 @@ class Bot_Twitter:
       
 
     def get_internet_speed(self):
-        self.driver.get('https://fast.com/')
-        sleep(16)
+        self.driver.get(URL)
+        sleep(14)
         # time.sleep()
         show_more_info_btn = self.driver.find_element(By.ID, value='show-more-details-link')
         show_more_info_btn.click()
