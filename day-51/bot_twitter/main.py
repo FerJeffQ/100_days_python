@@ -5,8 +5,8 @@ from selenium.webdriver.common.keys import Keys
 
 
 
-USERNAME = "ferjeff11"
-PASSWORD = "1nf1n1t0"
+USERNAME = ""
+PASSWORD = ""
 
 X_URL = "https://twitter.com/"
 URL = "https://www.speedtest.net/"
