@@ -18,7 +18,6 @@ print(number.text)
 history = driver.find_element(By.LINK_TEXT, value="View history")
 #history.click()
 
-
 search = driver.find_element(By.NAME, value="search")
 search.send_keys("Python")
 search.send_keys(Keys.ENTER)
