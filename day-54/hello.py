@@ -7,5 +7,5 @@ def hello_world():
     return "<p>Hola Mundo</p>"
 
 
-if __name__ == "__main__"    :
+if __name__ == "__main__":
     app.run()
